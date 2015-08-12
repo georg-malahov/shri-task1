@@ -3,12 +3,11 @@ module.exports = {
 	block: 'page',
 	title: 'Онлайн-табло авиарейсов',
 	styles: [
-			{ elem: 'css', url: '_task1.css' }
+			{ elem: 'css', url: 'task1.css' }
 	],
 	scripts: [
 			{ elem: 'js', url: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js' },
-			{ elem: 'js', url: 'task1.js' },
-			{ elem: 'js', url: borschik.link('task1.js') }
+			{ elem: 'js', url: 'task1.js' }
 	],
 	content: [
 		{
