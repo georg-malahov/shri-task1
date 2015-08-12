@@ -9,7 +9,7 @@ module.exports = function (config) {
             [require('enb/techs/file-provider'), { target: '?.bemjson.js' }],
             [enbBemTechs.files],
             [enbBemTechs.deps],
-            [enbBemTechs.bemjsonToBemdecl],
+            [enbBemTechs.bemjsonToBemdecl, { source: '_?.bemjson.js' }],
             // browser.js
             [require('enb-diverse-js/techs/browser-js'), { target: '?.browser.js' }],
             [require('enb/techs/file-merge'), {
@@ -50,8 +50,9 @@ module.exports = function (config) {
                 mimic: 'BEMHTML'
             }],
             // html
-            [require('enb-bh/techs/html-from-bemjson')],
+            [require('enb-bh/techs/html-from-bemjson'), { bemjsonFile: '_?.bemjson.js' }],
             // borschik
+            [borschikTech, { sourceTarget: '?.bemjson.js', destTarget: '_?.bemjson.js', freeze: true, minify: false }],
             [borschikTech, { sourceTarget: '?.css', destTarget: '_?.css', tech: 'cleancss', freeze: true, minify: isProd }],
             [borschikTech, { sourceTarget: '?.js', destTarget: '_?.js', freeze: true, minify: isProd }]
         ]);
