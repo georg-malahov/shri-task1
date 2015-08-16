@@ -1,6 +1,6 @@
 ({
 	shouldDeps: [
-		{ elem: 'airport-status', mod1: 'data' }
+		{ elem: 'airport-status', mod: 'data' }
 	],
 	mustDeps: [
 		{ block: 'vow' },

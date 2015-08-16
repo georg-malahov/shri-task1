@@ -46,7 +46,7 @@ modules.define('api__airport-status', ['jquery', 'inherit', 'events__channels', 
 						maxFlights: 50
 					};
 
-				if (window.airportStatusData != null) {
+				if (false && window.airportStatusData != null) { //Try to request ajax. Resolve with saved data on error.
 					_self._events.emit("loading");
 					setTimeout(function () {
 						_self._events.emit("complete");
@@ -65,7 +65,9 @@ modules.define('api__airport-status', ['jquery', 'inherit', 'events__channels', 
 					}).done(function(data) {
 						defer.resolve(data);
 					}).fail(function(reason) {
-						defer.reject(reason);
+						//If error, resolve with saved data. For demo purposes.
+						//defer.reject(reason);
+						defer.resolve(window.airportStatusData);
 					}).always(function () {
 						_self._events.emit("complete");
 					});
