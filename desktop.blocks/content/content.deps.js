@@ -1,5 +1,6 @@
-({
-	shouldDeps: [
-		{ elem: 'inner' }
-	]
+(
+{
+    shouldDeps: [
+        {elem: 'inner'}
+    ]
 })
