@@ -71,6 +71,9 @@ modules.define('api__airport-status', ['jquery', 'inherit', 'events__channels', 
                                 }
                             })
                             .done(function (data) {
+                                if (data.error) {
+                                    return defer.resolve(window.airportStatusData);
+                                }
                                 defer.resolve(data);
                             })
                             .fail(function (reason) {
